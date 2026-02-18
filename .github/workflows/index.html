@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EliteDrive | Drive the Extraordinary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Lora:ital,wght@0,400;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --dark: #121212;
+            --luxury-white: #faf9f5;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--dark);
+            color: var(--luxury-white);
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(18, 18, 18, 0.4), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .glass-nav {
+            background: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .gold-glow:hover {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            transform: scale(1.05);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-card:hover {
+            border-color: var(--gold);
+            background: rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav py-4 px-8 flex justify-between items-center">
+        <div class="text-2xl font-black tracking-tighter text-white">
+            ELITE<span class="text-[#D4AF37]">DRIVE</span>
+        </div>
+        <div class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-widest">
+            <a href="#" class="hover:text-[#D4AF37] transition-colors">The Fleet</a>
+            <a href="#" class="hover:text-[#D4AF37] transition-colors">Services</a>
+            <a href="#" class="hover:text-[#D4AF37] transition-colors">Experience</a>
+            <a href="#" class="hover:text-[#D4AF37] transition-colors">Concierge</a>
+        </div>
+        <button
+            class="bg-[#D4AF37] text-black px-6 py-2 font-bold text-xs uppercase tracking-widest gold-glow transition-all">
+            Reserve Now
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section h-screen flex items-center px-8 md:px-24">
+        <div class="max-w-3xl hero-content">
+            <h1 class="text-6xl md:text-8xl font-black mb-6 tracking-tighter leading-none opacity-0 translate-y-10"
+                id="hero-title">
+                DRIVE THE <br> <span class="text-[#D4AF37]">EXTRAORDINARY</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 font-light text-gray-300 opacity-0 translate-y-10" id="hero-sub">
+                Experience the pinnacle of automotive excellence with our curated fleet of the world's finest vehicles.
+            </p>
+            <div class="flex space-x-4 opacity-0 translate-y-10" id="hero-btns">
+                <button
+                    class="bg-[#D4AF37] text-black px-8 py-4 font-bold uppercase tracking-widest gold-glow transition-all">
+                    Explore Fleet
+                </button>
+                <button
+                    class="border border-white hover:bg-white hover:text-black px-8 py-4 font-bold uppercase tracking-widest transition-all">
+                    Learn More
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Prop / Features -->
+    <section class="py-24 px-8 bg-[#0a0a0a]">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
+            <div class="text-center p-8 glass-card rounded-2xl reveal">
+                <div class="w-16 h-16 bg-[#D4AF3733] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Besopke 24/7 Support</h3>
+                <p class="text-gray-400">Our dedicated concierge is always on standby for any request, anytime,
+                    anywhere.</p>
+            </div>
+            <div class="text-center p-8 glass-card rounded-2xl reveal">
+                <div class="w-16 h-16 bg-[#D4AF3733] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Platinum Insurance</h3>
+                <p class="text-gray-400">Drive with peace of mind. Our comprehensive platinum coverage is included with
+                    every rental.</p>
+            </div>
+            <div class="text-center p-8 glass-card rounded-2xl reveal">
+                <div class="w-16 h-16 bg-[#D4AF3733] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                        </path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-4">White-Glove Delivery</h3>
+                <p class="text-gray-400">We deliver your vehicle directly to your doorstep, airport, or hotel at your
+                    convenience.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fleet Grid -->
+    <section class="py-24 px-8" id="fleet">
+        <h2 class="text-4xl font-black mb-16 text-center tracking-widest uppercase">The <span
+                class="text-[#D4AF37]">Fleet</span></h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
+            <!-- Car Card 1 -->
+            <div class="group glass-card rounded-3xl overflow-hidden reveal">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=800"
+                        alt="Porsche 911"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div
+                        class="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-4 py-1 rounded-full text-xs font-bold text-[#D4AF37]">
+                        PERFORMANCE</div>
+                </div>
+                <div class="p-8">
+                    <div class="flex justify-between items-end mb-4">
+                        <div>
+                            <h4 class="text-2xl font-bold">Porsche 911 GT3</h4>
+                            <p class="text-gray-500 text-sm">Automotive Perfection</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-[#D4AF37] font-black text-xl">$899</span>
+                            <span class="text-gray-500 text-xs block">per day</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 mb-8 text-xs text-gray-400">
+                        <span class="border border-white/10 px-3 py-1 rounded">502 HP</span>
+                        <span class="border border-white/10 px-3 py-1 rounded">0-60 in 3.2s</span>
+                    </div>
+                    <button
+                        class="w-full border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black py-4 rounded-xl font-bold transition-all">
+                        Reserve Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Car Card 2 -->
+            <div class="group glass-card rounded-3xl overflow-hidden reveal">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&q=80&w=800"
+                        alt="Lamborghini Urus"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div
+                        class="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-4 py-1 rounded-full text-xs font-bold text-[#D4AF37]">
+                        SUV</div>
+                </div>
+                <div class="p-8">
+                    <div class="flex justify-between items-end mb-4">
+                        <div>
+                            <h4 class="text-2xl font-bold">Lamborghini Urus</h4>
+                            <p class="text-gray-500 text-sm">The World's Fastest SUV</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-[#D4AF37] font-black text-xl">$1,200</span>
+                            <span class="text-gray-500 text-xs block">per day</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 mb-8 text-xs text-gray-400">
+                        <span class="border border-white/10 px-3 py-1 rounded">641 HP</span>
+                        <span class="border border-white/10 px-3 py-1 rounded">Twin-Turbo V8</span>
+                    </div>
+                    <button
+                        class="w-full border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black py-4 rounded-xl font-bold transition-all">
+                        Reserve Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Car Card 3 -->
+            <div class="group glass-card rounded-3xl overflow-hidden reveal">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80&w=800"
+                        alt="Rolls-Royce Ghost"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div
+                        class="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-4 py-1 rounded-full text-xs font-bold text-[#D4AF37]">
+                        EXECUTIVE</div>
+                </div>
+                <div class="p-8">
+                    <div class="flex justify-between items-end mb-4">
+                        <div>
+                            <h4 class="text-2xl font-bold">Rolls-Royce Ghost</h4>
+                            <p class="text-gray-500 text-sm">Pure Luxury & Serenity</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-[#D4AF37] font-black text-xl">$2,400</span>
+                            <span class="text-gray-500 text-xs block">per day</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 mb-8 text-xs text-gray-400">
+                        <span class="border border-white/10 px-3 py-1 rounded">V12 Engine</span>
+                        <span class="border border-white/10 px-3 py-1 rounded">Starry Headliner</span>
+                    </div>
+                    <button
+                        class="w-full border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black py-4 rounded-xl font-bold transition-all">
+                        Reserve Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/10 text-center text-gray-500 text-sm">
+        <p>&copy; 2026 ELITEDRIVE LUXURY RENTALS. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
